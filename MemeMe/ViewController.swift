@@ -11,16 +11,25 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var memeImage: UIImageView!
+    @IBOutlet var cameraButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        // Disable camera button on devices that don't have a camera
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
 
     @IBAction func pickImage(sender: AnyObject) {
         
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        
         presentViewController(imagePicker, animated: true, completion: nil)
         
     }
@@ -36,6 +45,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
+    
+    
+    
+    
+    @IBAction func takePhoto(sender: AnyObject) {
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        
+        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
 
 }
 
