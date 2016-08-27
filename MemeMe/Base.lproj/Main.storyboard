@@ -18,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lFt-nN-Aal">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Dt-te-L4c">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
@@ -34,12 +38,13 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lFt-nN-Aal">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lFt-nN-Aal" secondAttribute="bottom" id="Fnn-RA-TU1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lFt-nN-Aal" secondAttribute="trailing" constant="-20" id="KwN-0N-zrU"/>
+                            <constraint firstItem="lFt-nN-Aal" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Szs-7H-vVg"/>
+                            <constraint firstItem="lFt-nN-Aal" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="TGO-9J-sRU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8Dt-te-L4c" secondAttribute="bottom" id="WSJ-mG-7ch"/>
                             <constraint firstItem="8Dt-te-L4c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="hub-rZ-WVl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8Dt-te-L4c" secondAttribute="trailing" constant="-20" id="lBq-Qd-KPO"/>
@@ -52,6 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="435" y="387"/>
         </scene>
     </scenes>
 </document>
