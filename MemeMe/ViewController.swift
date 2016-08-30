@@ -174,6 +174,51 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // Share Meme
+    
+    @IBAction func shareMeme(sender: AnyObject) {
+        let memedImage = generateMemedImage()
+        let ActivityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        presentViewController(ActivityVC, animated: true, completion: nil)
+    }
+    
+    // Generate Meme
+    
+    func generateMemedImage() -> UIImage {
+        
+        // TODO: Hide toolbar and navbar
+        // SHOULD I RESTRUCTURE MY STORYBOARD TO USE A NAVIGATION CONTROLLER... I PROBABLY SHOULD...? I'LL PROBABLY NEED ONE FOR THE NEXT (STEP OF THIS) PROJECT...
+        navigationController?.setToolbarHidden(true, animated: false)
+        
+        // Render view to an image
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
+        let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        // TODO:  Show toolbar and navbar       
+        
+        return memedImage
+    }
+    
+    // Save Meme
+    
+    func save() {
+        let memedImage = generateMemedImage()
+        _ = Meme(topText: topText.text, bottomText: bottomText.text, originalImage: memeImage.image, memedImage: memedImage)
+    }
+    
+
+    
 
 }
 

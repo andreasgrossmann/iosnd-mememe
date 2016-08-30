@@ -14,6 +14,7 @@
 		E169745D1D71DAD400A231E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E169745B1D71DAD400A231E5 /* LaunchScreen.storyboard */; };
 		E16974681D71DAD400A231E5 /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16974671D71DAD400A231E5 /* MemeMeTests.swift */; };
 		E16974731D71DAD400A231E5 /* MemeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16974721D71DAD400A231E5 /* MemeMeUITests.swift */; };
+		E1DB3A1A1D760B2600D5A6C6 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB3A191D760B2600D5A6C6 /* Meme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E169746E1D71DAD400A231E5 /* MemeMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E16974721D71DAD400A231E5 /* MemeMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeUITests.swift; sourceTree = "<group>"; };
 		E16974741D71DAD400A231E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1DB3A191D760B2600D5A6C6 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				E16974521D71DAD400A231E5 /* AppDelegate.swift */,
 				E16974541D71DAD400A231E5 /* ViewController.swift */,
+				E1DB3A191D760B2600D5A6C6 /* Meme.swift */,
 				E16974561D71DAD400A231E5 /* Main.storyboard */,
 				E16974591D71DAD400A231E5 /* Assets.xcassets */,
 				E169745B1D71DAD400A231E5 /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1DB3A1A1D760B2600D5A6C6 /* Meme.swift in Sources */,
 				E16974551D71DAD400A231E5 /* ViewController.swift in Sources */,
 				E16974531D71DAD400A231E5 /* AppDelegate.swift in Sources */,
 			);
