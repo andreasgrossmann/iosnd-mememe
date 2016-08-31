@@ -61,7 +61,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.86666666670000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="pgI-tR-x95" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="3T6-HW-aEI"/>
                             <constraint firstItem="NUg-nI-jyl" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="5yp-X0-gbn"/>
@@ -82,9 +82,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomBar" destination="8Dt-te-L4c" id="wHI-AY-X6V"/>
                         <outlet property="bottomText" destination="NUg-nI-jyl" id="LU5-kb-srV"/>
                         <outlet property="cameraButton" destination="ZAn-qt-4dr" id="Vw4-3b-2Kj"/>
                         <outlet property="memeImage" destination="lFt-nN-Aal" id="Nj3-Q5-n6l"/>
+                        <outlet property="shareButton" destination="FFg-3R-8yZ" id="Wy0-7O-esu"/>
+                        <outlet property="topBar" destination="pgI-tR-x95" id="yjx-q7-t1x"/>
                         <outlet property="topText" destination="o9p-mQ-a5O" id="auP-yH-OhY"/>
                     </connections>
                 </viewController>

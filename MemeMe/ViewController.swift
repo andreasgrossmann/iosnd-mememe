@@ -14,6 +14,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var bottomText: UITextField!
     @IBOutlet var memeImage: UIImageView!
     @IBOutlet var cameraButton: UIBarButtonItem!
+    @IBOutlet var topBar: UIToolbar!
+    @IBOutlet var bottomBar: UIToolbar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -195,9 +197,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func generateMemedImage() -> UIImage {
         
-        // TODO: Hide toolbar and navbar
-        // SHOULD I RESTRUCTURE MY STORYBOARD TO USE A NAVIGATION CONTROLLER... I PROBABLY SHOULD...? I'LL PROBABLY NEED ONE FOR THE NEXT (STEP OF THIS) PROJECT...
-        navigationController?.setToolbarHidden(true, animated: false)
+        // Hide navbar and toolbar
+        topBar.hidden = true
+        bottomBar.hidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(view.frame.size)
@@ -205,7 +207,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        // TODO:  Show toolbar and navbar       
+        // Show navbar and toolbar
+        topBar.hidden = false
+        bottomBar.hidden = false
         
         return memedImage
     }
