@@ -180,6 +180,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
+    // Reset canvas when cancel button pressed
+    
+    @IBAction func resetCanvas(sender: AnyObject) {
+        topText.text = "TOP"
+        bottomText.text = "BOTTOM"
+        memeImage.image = nil
+    }
     
     
     
