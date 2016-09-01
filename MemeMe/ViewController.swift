@@ -17,39 +17,44 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var topBar: UIToolbar!
     @IBOutlet var bottomBar: UIToolbar!
     
+    // Text field default values
+    
+    let topTextDefault = "TOP"
+    let bottomTextDefault = "BOTTOM"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Text style attributes
         
-        let centeringText = NSMutableParagraphStyle()
-        centeringText.alignment = .Center
+        let centerText = NSMutableParagraphStyle()
+        centerText.alignment = .Center
         
         let memeTextAttributes = [
             NSStrokeColorAttributeName: UIColor.blackColor(),
             NSForegroundColorAttributeName: UIColor.whiteColor(),
             NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
             NSStrokeWidthAttributeName: -5.0,
-            NSParagraphStyleAttributeName: centeringText
+            NSParagraphStyleAttributeName: centerText
         ]
         
-        topText.defaultTextAttributes = memeTextAttributes
-        bottomText.defaultTextAttributes = memeTextAttributes
+        // Configure text fields
         
-
+        func configureTextFields(textField: UITextField) {
+            textField.defaultTextAttributes = memeTextAttributes
+            textField.delegate = self
+        }
         
-
-        
-        
-        topText.delegate = self
-        bottomText.delegate = self
-        
-
+        configureTextFields(topText)
+        configureTextFields(bottomText)
         
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         // Disable camera button on devices that don't have a camera
+        
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         
         subscribeToKeyboardNotifications()
@@ -65,19 +70,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
+
+    
+    
     
     
     
     // Clear textfield when editing begins
+    
     func textFieldDidBeginEditing(textField: UITextField) {
         textField.text = ""
     }
 
-    // When an empty string is entered, set textfield to default value
-    func textFieldDidEndEditing(textField: UITextField) {
-        topText.text == "" ? (topText.text = "TOP") : (topText.text = topText.text)
-        bottomText.text == "" ? (bottomText.text = "BOTTOM") : (bottomText.text = bottomText.text)
-    }
+
     
     
     
@@ -85,7 +90,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
-    // Make view slide up when keyboard shows and down again when keyboard hides
+    // Make view slide up when keyboard shows for bottom text and down again when keyboard hides
     
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
@@ -121,12 +126,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
+    // When an empty string is entered, set textfield to default value
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if (topText.text == "") {topText.text = topTextDefault}
+        if (bottomText.text == "") {bottomText.text = bottomTextDefault}
+    }
+    
+    
 
 
     
     
     
-    // Keyboard hides when return key is pressed
+    // Hide keyboard when return key is pressed
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -136,24 +149,56 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
-    // Pick an existing image from the device
     
-    @IBAction func pickImage(sender: AnyObject) {
+    
+    
+    
+    
+    
+    
+    
+    // Configure image picker
+    
+    func configureImagePicker(source: UIImagePickerControllerSourceType) {
         
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        imagePicker.sourceType = source
         
         presentViewController(imagePicker, animated: true, completion: nil)
         
     }
     
+    
+    // Pick an existing image from the device
+    
+    @IBAction func pickImage(sender: AnyObject) {
+        
+        configureImagePicker(UIImagePickerControllerSourceType.PhotoLibrary)
+        
+    }
+
+    // Take a new photo
+    
+    @IBAction func takePhoto(sender: AnyObject) {
+        
+        configureImagePicker(UIImagePickerControllerSourceType.Camera)
+    }
+    
+    
+    
+    
+    
+    
+    
+    // Formally dismiss view controller when image picking is cancelled
+    
     func imagePickerControllerDidCancel(picker:UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // Place selected image in the view
+    // Place selected image in view
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -164,17 +209,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
-    // Take a photo
     
-    @IBAction func takePhoto(sender: AnyObject) {
-        
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        
-        presentViewController(imagePicker, animated: true, completion: nil)
-    }
+    
     
     
     
@@ -183,14 +219,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // Reset canvas when cancel button pressed
     
     @IBAction func resetCanvas(sender: AnyObject) {
-        topText.text = "TOP"
-        bottomText.text = "BOTTOM"
+        topText.text = topTextDefault
+        bottomText.text = bottomTextDefault
         memeImage.image = nil
     }
     
+    // Hide navigation
     
+    func hideNav() {
+        topBar.hidden = true
+        bottomBar.hidden = true
+    }
     
+    // Show navigation
     
+    func showNav() {
+        topBar.hidden = false
+        bottomBar.hidden = false
+    }
     
     // Share Meme
     
@@ -204,9 +250,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func generateMemedImage() -> UIImage {
         
-        // Hide navbar and toolbar
-        topBar.hidden = true
-        bottomBar.hidden = true
+        // Hide navigation
+        hideNav()
         
         // Render view to an image
         UIGraphicsBeginImageContext(view.frame.size)
@@ -214,9 +259,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        // Show navbar and toolbar
-        topBar.hidden = false
-        bottomBar.hidden = false
+        // Show navigation
+        showNav()
         
         return memedImage
     }
