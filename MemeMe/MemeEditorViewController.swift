@@ -69,7 +69,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     // Clear textfield when editing begins
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        textField.text = ""
+        if textField.text == "TOP" || textField.text == "BOTTOM" {
+            textField.text = ""
+        }
     }
 
     // Keyboard notifications
