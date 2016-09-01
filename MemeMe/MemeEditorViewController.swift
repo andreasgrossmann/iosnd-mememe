@@ -179,14 +179,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         bottomBar.hidden = hide
     }
     
-    // Share Meme
-    
-    @IBAction func shareMeme(sender: AnyObject) {
-        let memedImage = generateMemedImage()
-        let ActivityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
-        presentViewController(ActivityVC, animated: true, completion: nil)
-    }
-    
     // Generate Meme
     
     func generateMemedImage() -> UIImage {
@@ -205,12 +197,25 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
         return memedImage
     }
+
+    // Share Meme
     
-    // Save Meme
-    
-    func save() {
+    @IBAction func shareMeme(sender: AnyObject) {
         let memedImage = generateMemedImage()
-        _ = Meme(topText: topText.text, bottomText: bottomText.text, originalImage: memeImage.image, memedImage: memedImage)
+        let ActivityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        
+        // If action is completed, save Meme and dismiss view controller
+        
+        ActivityVC.completionWithItemsHandler = { activity, success, items, error in
+            if success {
+                _ = Meme(topText: self.topText.text, bottomText: self.bottomText.text, originalImage: self.memeImage.image, memedImage: memedImage)
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else if (error != nil) {
+                print(error) // TODO: Show the user an error message in version 2.0
+            }
+        }
+        
+        presentViewController(ActivityVC, animated: true, completion: nil)
     }
 
 }
