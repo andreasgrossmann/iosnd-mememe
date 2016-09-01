@@ -66,31 +66,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromKeyboardNotifications()
     }
     
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
     // Clear textfield when editing begins
     
     func textFieldDidBeginEditing(textField: UITextField) {
         textField.text = ""
     }
 
-
-    
-    
-    
-    
-    
-    
-    
-    // Make view slide up when keyboard shows for bottom text and down again when keyboard hides
+    // Keyboard notifications
     
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
@@ -102,6 +84,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
+    
+    // Make view slide up when keyboard shows for bottom text and down again when keyboard hides
     
     func keyboardWillShow(notification: NSNotification) {
         if bottomText.isFirstResponder() {
@@ -121,11 +105,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return keyboardSize.CGRectValue().height
     }
     
-    
-    
-    
-    
-    
     // When an empty string is entered, set textfield to default value
     
     func textFieldDidEndEditing(textField: UITextField) {
@@ -133,30 +112,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if (bottomText.text == "") {bottomText.text = bottomTextDefault}
     }
     
-    
-
-
-    
-    
-    
     // Hide keyboard when return key is pressed
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     // Configure image picker
     
     func configureImagePicker(source: UIImagePickerControllerSourceType) {
@@ -169,9 +131,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         presentViewController(imagePicker, animated: true, completion: nil)
         
     }
-    
-    
-    // Pick an existing image from the device
+
+    // Pick an existing photo from the device
     
     @IBAction func pickImage(sender: AnyObject) {
         
@@ -185,16 +146,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         configureImagePicker(UIImagePickerControllerSourceType.Camera)
     }
-    
-    
-    
-    
-    
-    
-    
+
     // Formally dismiss view controller when image picking is cancelled
     
-    func imagePickerControllerDidCancel(picker:UIImagePickerController) {
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -206,17 +161,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // Reset canvas when cancel button pressed
+
+    // Reset canvas when cancel button is pressed
     
     @IBAction func resetCanvas(sender: AnyObject) {
         topText.text = topTextDefault
@@ -224,14 +170,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         memeImage.image = nil
     }
     
-    // Hide navigation
+    // Hide navigation function
     
     func hideNav() {
         topBar.hidden = true
         bottomBar.hidden = true
     }
     
-    // Show navigation
+    // Show navigation function
     
     func showNav() {
         topBar.hidden = false
@@ -271,9 +217,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage = generateMemedImage()
         _ = Meme(topText: topText.text, bottomText: bottomText.text, originalImage: memeImage.image, memedImage: memedImage)
     }
-    
-
-    
 
 }
 
