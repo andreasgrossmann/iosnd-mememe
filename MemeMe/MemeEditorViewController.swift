@@ -91,13 +91,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     func keyboardWillShow(notification: NSNotification) {
         if bottomText.isFirstResponder() {
-            self.view.frame.origin.y =  getKeyboardHeight(notification) * -1
+            view.frame.origin.y =  getKeyboardHeight(notification) * -1
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if bottomText.isFirstResponder() {
-            self.view.frame.origin.y = 0
+            view.frame.origin.y = 0
         }
     }
     
@@ -117,7 +117,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     // Hide keyboard when return key is pressed
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        view.endEditing(true)
         return false
     }
 
