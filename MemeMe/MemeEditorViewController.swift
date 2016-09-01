@@ -172,18 +172,11 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         memeImage.image = nil
     }
     
-    // Hide navigation function
+    // Show and hide navigation function
     
-    func hideNav() {
-        topBar.hidden = true
-        bottomBar.hidden = true
-    }
-    
-    // Show navigation function
-    
-    func showNav() {
-        topBar.hidden = false
-        bottomBar.hidden = false
+    func showHideNav(hide: Bool) {
+        topBar.hidden = hide
+        bottomBar.hidden = hide
     }
     
     // Share Meme
@@ -199,7 +192,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func generateMemedImage() -> UIImage {
         
         // Hide navigation
-        hideNav()
+        showHideNav(true)
         
         // Render view to an image
         UIGraphicsBeginImageContext(view.frame.size)
@@ -208,7 +201,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         UIGraphicsEndImageContext()
         
         // Show navigation
-        showNav()
+        showHideNav(false)
         
         return memedImage
     }
