@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditorViewController.swift
 //  MemeMe
 //
 //  Created by Andreas on 27/08/2016.
@@ -13,6 +13,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet var topText: UITextField!
     @IBOutlet var bottomText: UITextField!
     @IBOutlet var memeImage: UIImageView!
+    @IBOutlet var shareButton: UIBarButtonItem!
     @IBOutlet var cameraButton: UIBarButtonItem!
     @IBOutlet var topBar: UIToolbar!
     @IBOutlet var bottomBar: UIToolbar!
@@ -24,6 +25,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Disable share button initially
+        
+        shareButton.enabled = false
         
         // Text style attributes
         
@@ -162,14 +167,17 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             memeImage.image = image
             dismissViewControllerAnimated(true, completion: nil)
         }
+        
+        shareButton.enabled = true // enable share button when image is placed
     }
 
-    // Reset canvas when cancel button is pressed
+    // Reset canvas when cancel button is pressed and disable share button
     
     @IBAction func resetCanvas(sender: AnyObject) {
         topText.text = topTextDefault
         bottomText.text = bottomTextDefault
         memeImage.image = nil
+        shareButton.enabled = false
     }
     
     // Show and hide navigation function
@@ -197,6 +205,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
         return memedImage
     }
+    
+    // Save Meme function
+    
+    func saveMeme() {
+        let memedImage = generateMemedImage()
+        _ = Meme(topText: self.topText.text, bottomText: self.bottomText.text, originalImage: self.memeImage.image, memedImage: memedImage)
+    }
 
     // Share Meme
     
@@ -208,7 +223,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
         ActivityVC.completionWithItemsHandler = { activity, success, items, error in
             if success {
-                _ = Meme(topText: self.topText.text, bottomText: self.bottomText.text, originalImage: self.memeImage.image, memedImage: memedImage)
+                self.saveMeme()
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else if (error != nil) {
                 print(error) // TODO: Show the user an error message in version 2.0

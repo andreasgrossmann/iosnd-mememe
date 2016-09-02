@@ -90,6 +90,7 @@
                         <outlet property="bottomText" destination="NUg-nI-jyl" id="LU5-kb-srV"/>
                         <outlet property="cameraButton" destination="ZAn-qt-4dr" id="Vw4-3b-2Kj"/>
                         <outlet property="memeImage" destination="lFt-nN-Aal" id="Nj3-Q5-n6l"/>
+                        <outlet property="shareButton" destination="FFg-3R-8yZ" id="MhJ-KD-hqO"/>
                         <outlet property="topBar" destination="pgI-tR-x95" id="yjx-q7-t1x"/>
                         <outlet property="topText" destination="o9p-mQ-a5O" id="auP-yH-OhY"/>
                     </connections>
