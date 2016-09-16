@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10A393E1D830A7200BC0F7B /* SentMemeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A393D1D830A7200BC0F7B /* SentMemeCollectionViewController.swift */; };
 		E16974531D71DAD400A231E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16974521D71DAD400A231E5 /* AppDelegate.swift */; };
 		E16974551D71DAD400A231E5 /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16974541D71DAD400A231E5 /* MemeEditorViewController.swift */; };
 		E16974581D71DAD400A231E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16974561D71DAD400A231E5 /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		E169745D1D71DAD400A231E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E169745B1D71DAD400A231E5 /* LaunchScreen.storyboard */; };
 		E16974681D71DAD400A231E5 /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16974671D71DAD400A231E5 /* MemeMeTests.swift */; };
 		E16974731D71DAD400A231E5 /* MemeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16974721D71DAD400A231E5 /* MemeMeUITests.swift */; };
+		E1A107911D8BEA4000FAAF87 /* SentMemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A107901D8BEA4000FAAF87 /* SentMemeTableViewController.swift */; };
 		E1DB3A1A1D760B2600D5A6C6 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB3A191D760B2600D5A6C6 /* Meme.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E10A393D1D830A7200BC0F7B /* SentMemeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemeCollectionViewController.swift; sourceTree = "<group>"; };
 		E169744F1D71DAD400A231E5 /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E16974521D71DAD400A231E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E16974541D71DAD400A231E5 /* MemeEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		E169746E1D71DAD400A231E5 /* MemeMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E16974721D71DAD400A231E5 /* MemeMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeUITests.swift; sourceTree = "<group>"; };
 		E16974741D71DAD400A231E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1A107901D8BEA4000FAAF87 /* SentMemeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemeTableViewController.swift; sourceTree = "<group>"; };
 		E1DB3A191D760B2600D5A6C6 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +103,8 @@
 		E16974511D71DAD400A231E5 /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				E1A107901D8BEA4000FAAF87 /* SentMemeTableViewController.swift */,
+				E10A393D1D830A7200BC0F7B /* SentMemeCollectionViewController.swift */,
 				E16974521D71DAD400A231E5 /* AppDelegate.swift */,
 				E16974541D71DAD400A231E5 /* MemeEditorViewController.swift */,
 				E1DB3A191D760B2600D5A6C6 /* Meme.swift */,
@@ -191,19 +197,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Andreas;
 				TargetAttributes = {
 					E169744E1D71DAD400A231E5 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = Z6P53X67RY;
+						LastSwiftMigration = 0800;
 					};
 					E16974621D71DAD400A231E5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = E169744E1D71DAD400A231E5;
 					};
 					E169746D1D71DAD400A231E5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = E169744E1D71DAD400A231E5;
 					};
 				};
@@ -262,6 +271,8 @@
 			files = (
 				E1DB3A1A1D760B2600D5A6C6 /* Meme.swift in Sources */,
 				E16974551D71DAD400A231E5 /* MemeEditorViewController.swift in Sources */,
+				E10A393E1D830A7200BC0F7B /* SentMemeCollectionViewController.swift in Sources */,
+				E1A107911D8BEA4000FAAF87 /* SentMemeTableViewController.swift in Sources */,
 				E16974531D71DAD400A231E5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,8 +342,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -377,8 +390,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -397,6 +412,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -413,6 +429,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.andreas.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -427,6 +444,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.andreas.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -438,6 +456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andreas.MemeMeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemeMe.app/MemeMe";
 			};
 			name = Debug;
@@ -450,6 +469,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andreas.MemeMeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemeMe.app/MemeMe";
 			};
 			name = Release;
@@ -461,6 +481,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andreas.MemeMeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MemeMe;
 			};
 			name = Debug;
@@ -472,6 +493,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andreas.MemeMeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MemeMe;
 			};
 			name = Release;
