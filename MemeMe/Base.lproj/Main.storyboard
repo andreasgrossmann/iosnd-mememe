@@ -51,6 +51,33 @@
             </objects>
             <point key="canvasLocation" x="-199" y="-103"/>
         </scene>
+        <!--Sent Meme Detail View Controller-->
+        <scene sceneID="GSR-U8-hmi">
+            <objects>
+                <viewController storyboardIdentifier="SentMemeDetailView" id="uw0-mZ-udX" customClass="SentMemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="249-ub-cPh"/>
+                        <viewControllerLayoutGuide type="bottom" id="9mZ-mZ-ZOp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JLz-GG-3LM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wom-M1-hX4" userLabel="SentMemeImageView">
+                                <frame key="frameInset" minY="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Wom-M1-hX4" id="W2A-Xx-Trz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O5V-r4-zlR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="716" y="277"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="UDz-wR-Ar6">
             <objects>
@@ -155,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="277"/>
+            <point key="canvasLocation" x="1722" y="277"/>
         </scene>
         <!--Collection-->
         <scene sceneID="l1w-h1-ruf">
