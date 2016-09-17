@@ -171,13 +171,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         shareButton.isEnabled = true // enable share button when image is placed
     }
 
-    // Reset canvas when cancel button is pressed and disable share button
+    // Dismiss this view controller when cancel button is pressed
     
-    @IBAction func resetCanvas(_ sender: AnyObject) {
-        topText.text = topTextDefault
-        bottomText.text = bottomTextDefault
-        memeImage.image = nil
-        shareButton.isEnabled = false
+    @IBAction func cancelMeme(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
     
     // Show and hide navigation function

@@ -121,7 +121,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sNI-Kh-wg1"/>
                                     <barButtonItem title="Cancel" id="lAZ-pT-Nyq">
                                         <connections>
-                                            <action selector="resetCanvas:" destination="BYZ-38-t0r" id="394-1h-de5"/>
+                                            <action selector="cancelMeme:" destination="BYZ-38-t0r" id="L5E-mO-flR"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
