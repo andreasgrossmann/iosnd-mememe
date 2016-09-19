@@ -16,22 +16,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemeTableCell" textLabel="1Pw-s3-4t2" style="IBUITableViewCellStyleDefault" id="Vp3-U9-Zyp">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemeTableCell" id="Vp3-U9-Zyp" customClass="SentMemeTableViewCell" customModule="MemeMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vp3-U9-Zyp" id="oWK-Yo-BZg">
                                     <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Pw-s3-4t2">
-                                            <frame key="frameInset" minX="15" width="345" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RD0-RP-iH9" userLabel="Sent Meme Table Image">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="43" id="xb1-YW-8R2"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM8-Lg-tUQ">
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dM8-Lg-tUQ" firstAttribute="top" secondItem="oWK-Yo-BZg" secondAttribute="topMargin" constant="3" id="0QE-NZ-9FQ"/>
+                                        <constraint firstItem="dM8-Lg-tUQ" firstAttribute="leading" secondItem="RD0-RP-iH9" secondAttribute="trailing" constant="16" id="1LI-r4-hfY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="dM8-Lg-tUQ" secondAttribute="bottom" constant="3" id="BVj-aO-iIT"/>
+                                        <constraint firstItem="RD0-RP-iH9" firstAttribute="top" secondItem="oWK-Yo-BZg" secondAttribute="top" id="DlM-BX-TOd"/>
+                                        <constraint firstItem="dM8-Lg-tUQ" firstAttribute="trailing" secondItem="oWK-Yo-BZg" secondAttribute="trailingMargin" id="ds9-Uw-Ned"/>
+                                        <constraint firstItem="RD0-RP-iH9" firstAttribute="leading" secondItem="oWK-Yo-BZg" secondAttribute="leading" constant="8" id="tQz-V8-NCQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="RD0-RP-iH9" secondAttribute="bottom" id="u6I-ol-gpb"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="sentMemeTableImage" destination="RD0-RP-iH9" id="kiD-ag-GGq"/>
+                                    <outlet property="sentMemeTableLabel" destination="dM8-Lg-tUQ" id="RMT-2R-rOA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -49,7 +65,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTE-Ys-Ykj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-199" y="-103"/>
+            <point key="canvasLocation" x="-199.19999999999999" y="-103.89805097451276"/>
         </scene>
         <!--Sent Meme Detail View Controller-->
         <scene sceneID="GSR-U8-hmi">
