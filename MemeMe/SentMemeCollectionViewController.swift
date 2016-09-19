@@ -11,6 +11,7 @@ import UIKit
 class SentMemeCollectionViewController: UICollectionViewController {
 
     
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     
     var memes: [Meme] {
@@ -20,6 +21,16 @@ class SentMemeCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Flow layout
+        
+        let space: CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,10 +47,30 @@ class SentMemeCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemeCollectionItem", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemeCollectionCell", for: indexPath) as! SentMemeCollectionViewCell
         let meme = memes[indexPath.item]
-        let imageView = UIImageView(image: meme.memedImage)
-        cell.backgroundView = imageView
+        cell.sentMemeCollectionImage.image = meme.originalImage
+
+        
+        
+        
+        // Styles for label text
+        
+        let textAttributes = [NSStrokeColorAttributeName: UIColor.black,
+                              NSForegroundColorAttributeName: UIColor.white,
+                              NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)!,
+                              NSStrokeWidthAttributeName: Float(-5.0)] as [String : Any]
+        
+        // Set label text to meme text
+        
+        let attribTextTop = NSAttributedString(string: meme.topText!, attributes: textAttributes)
+        let attribTextBottom = NSAttributedString(string: meme.bottomText!, attributes: textAttributes)
+        
+        cell.sentMemeCollectionTextTop.attributedText = attribTextTop
+        cell.sentMemeCollectionTextBottom.attributedText = attribTextBottom
+        
+        
+        
         
         return cell
     }
