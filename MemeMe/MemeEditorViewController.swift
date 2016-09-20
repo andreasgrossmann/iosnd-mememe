@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
@@ -191,16 +192,20 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         // Hide navigation
         showHideNav(true)
         
-        // Render view to an image
-        UIGraphicsBeginImageContext(view.frame.size)
-        view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
-        let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        // Capture the actual meme
+        let actualMeme = AVMakeRect(aspectRatio: memeImage.image!.size, insideRect: memeImage.frame)
+        
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: actualMeme.width,height: actualMeme.height), false, 0)
+        view.drawHierarchy(in: CGRect(x: -actualMeme.origin.x, y: -actualMeme.origin.y, width: view.frame.size.width, height: view.frame.size.height), afterScreenUpdates: true)
+        
+        // Render meme as image
+        let memedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         // Show navigation
         showHideNav(false)
         
-        return memedImage
+        return memedImage!
     }
     
     // Save Meme function
