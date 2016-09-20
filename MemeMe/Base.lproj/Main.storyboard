@@ -16,11 +16,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemeTableCell" rowHeight="100" id="Vp3-U9-Zyp" customClass="SentMemeTableViewCell" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemeTableCell" rowHeight="104" id="Vp3-U9-Zyp" customClass="SentMemeTableViewCell" customModule="MemeMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="104"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vp3-U9-Zyp" id="oWK-Yo-BZg">
-                                    <frame key="frameInset" width="375" height="99"/>
+                                    <frame key="frameInset" width="375" height="103"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RD0-RP-iH9" userLabel="Sent Meme Table Image">
@@ -49,14 +49,14 @@
                                         <constraint firstItem="dM8-Lg-tUQ" firstAttribute="leading" secondItem="RD0-RP-iH9" secondAttribute="trailing" constant="8" id="1LI-r4-hfY"/>
                                         <constraint firstItem="5p3-fn-JK6" firstAttribute="leading" secondItem="oWK-Yo-BZg" secondAttribute="leadingMargin" id="1fe-uG-9JP"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="dM8-Lg-tUQ" secondAttribute="bottom" id="BVj-aO-iIT"/>
-                                        <constraint firstItem="RD0-RP-iH9" firstAttribute="top" secondItem="oWK-Yo-BZg" secondAttribute="top" id="DlM-BX-TOd"/>
+                                        <constraint firstItem="RD0-RP-iH9" firstAttribute="top" secondItem="oWK-Yo-BZg" secondAttribute="top" constant="2" id="DlM-BX-TOd"/>
                                         <constraint firstItem="NMb-fs-m5K" firstAttribute="leading" secondItem="oWK-Yo-BZg" secondAttribute="leadingMargin" id="ICK-zj-XvF"/>
                                         <constraint firstItem="dM8-Lg-tUQ" firstAttribute="leading" secondItem="NMb-fs-m5K" secondAttribute="trailing" constant="8" id="NRM-y6-X5H"/>
                                         <constraint firstItem="5p3-fn-JK6" firstAttribute="bottom" secondItem="oWK-Yo-BZg" secondAttribute="bottomMargin" id="cw1-Ni-sBz"/>
                                         <constraint firstItem="dM8-Lg-tUQ" firstAttribute="trailing" secondItem="oWK-Yo-BZg" secondAttribute="trailingMargin" id="ds9-Uw-Ned"/>
                                         <constraint firstItem="NMb-fs-m5K" firstAttribute="top" secondItem="oWK-Yo-BZg" secondAttribute="topMargin" constant="3" id="rnD-UU-5bv"/>
                                         <constraint firstItem="RD0-RP-iH9" firstAttribute="leading" secondItem="oWK-Yo-BZg" secondAttribute="leading" constant="8" id="tQz-V8-NCQ"/>
-                                        <constraint firstAttribute="bottom" secondItem="RD0-RP-iH9" secondAttribute="bottom" constant="-1" id="u6I-ol-gpb"/>
+                                        <constraint firstAttribute="bottom" secondItem="RD0-RP-iH9" secondAttribute="bottom" constant="2" id="u6I-ol-gpb"/>
                                         <constraint firstItem="dM8-Lg-tUQ" firstAttribute="leading" secondItem="5p3-fn-JK6" secondAttribute="trailing" constant="8" id="yak-2z-5y5"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -348,6 +348,6 @@
         <image name="Table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AZd-zg-vMI"/>
+        <segue reference="kdZ-Yc-gEy"/>
     </inferredMetricsTieBreakers>
 </document>

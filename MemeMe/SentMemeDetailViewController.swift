@@ -20,15 +20,13 @@ class SentMemeDetailViewController: UIViewController {
         // Hide tab bar
         tabBarController?.tabBar.isHidden = true
         
-        
+        // Place meme image
         if let meme = meme {
             imageView!.image = meme.memedImage
         } else {
-            print(meme)
+            print("Something's not right") // Error
         }
-        
-        
-        
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {

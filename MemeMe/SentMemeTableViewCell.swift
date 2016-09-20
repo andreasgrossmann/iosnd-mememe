@@ -15,5 +15,4 @@ class SentMemeTableViewCell: UITableViewCell {
     @IBOutlet weak var sentMemeTableTextBottom: UILabel!
     @IBOutlet weak var sentMemeTableLabel: UILabel!
 
-
 }

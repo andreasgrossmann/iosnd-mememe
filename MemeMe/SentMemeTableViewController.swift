@@ -10,19 +10,16 @@ import UIKit
 
 class SentMemeTableViewController: UITableViewController {
 
-
-    
-    
+    // Access stored memes
     var memes: [Meme] {
         return (UIApplication.shared.delegate as! AppDelegate).memes
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set table row height
-        tableView.rowHeight = 100.0
+        tableView.rowHeight = 104.0
         
         // Remove separator lines on table
         tableView.separatorStyle = .none
@@ -34,23 +31,17 @@ class SentMemeTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    
-
+    // Set number of rows
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memes.count
     }
 
+    // Prepare cells with sent meme images and text
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SentMemeTableCell", for: indexPath) as! SentMemeTableViewCell
         let meme = memes[indexPath.row]
-//        cell.sentMemeTableImage.contentMode = UIViewContentMode.scaleAspectFill
         cell.sentMemeTableImage!.image = meme.originalImage
-        
-        
-        
-        
-        
         
         // Styles for label text
         
@@ -67,19 +58,12 @@ class SentMemeTableViewController: UITableViewController {
         cell.sentMemeTableTextTop.attributedText = attribTextTop
         cell.sentMemeTableTextBottom.attributedText = attribTextBottom
         
-        
-        
-        
-        
-        
-        cell.sentMemeTableLabel?.text = meme.topText! + " " + meme.bottomText!
+        cell.sentMemeTableLabel.text = meme.topText! + " " + meme.bottomText!
         
         return cell
     }
     
-    
-    
-    
+    // Show detail view when row selected
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -87,10 +71,5 @@ class SentMemeTableViewController: UITableViewController {
         sentMemeDetail.meme = memes[indexPath.row]
         navigationController!.pushViewController(sentMemeDetail, animated: true)
     }
-    
-    
-    
-    
-
 
 }

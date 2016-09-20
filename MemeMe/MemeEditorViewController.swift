@@ -198,7 +198,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         UIGraphicsBeginImageContextWithOptions(CGSize(width: actualMeme.width,height: actualMeme.height), false, 0)
         view.drawHierarchy(in: CGRect(x: -actualMeme.origin.x, y: -actualMeme.origin.y, width: view.frame.size.width, height: view.frame.size.height), afterScreenUpdates: true)
         
-        // Render meme as image
+        // Render meme as an image
         let memedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
@@ -233,7 +233,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
                 self.saveMeme()
                 self.dismiss(animated: true, completion: nil)
             } else if (error != nil) {
-                print(error) // TODO: Show the user an error message in version 2.0
+                print(error) // Show error message
             }
         }
         

@@ -10,15 +10,13 @@ import UIKit
 
 class SentMemeCollectionViewController: UICollectionViewController {
 
-    
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
-    
+    // Access stored memes
     var memes: [Meme] {
         return (UIApplication.shared.delegate as! AppDelegate).memes
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,22 +36,19 @@ class SentMemeCollectionViewController: UICollectionViewController {
         
         collectionView?.reloadData()
     }
-    
-    
-    
+
+    // Set number of items
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
     
+    // Prepare cells with meme images and text
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemeCollectionCell", for: indexPath) as! SentMemeCollectionViewCell
         let meme = memes[indexPath.item]
         cell.sentMemeCollectionImage.image = meme.originalImage
 
-        
-        
-        
         // Styles for label text
         
         let textAttributes = [NSStrokeColorAttributeName: UIColor.black,
@@ -68,17 +63,11 @@ class SentMemeCollectionViewController: UICollectionViewController {
         
         cell.sentMemeCollectionTextTop.attributedText = attribTextTop
         cell.sentMemeCollectionTextBottom.attributedText = attribTextBottom
-        
-        
-        
-        
+
         return cell
     }
-    
-    
-    
-    
-    
+
+    // Show detail view when item selected
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -86,8 +75,5 @@ class SentMemeCollectionViewController: UICollectionViewController {
         sentMemeDetail.meme = memes[indexPath.row]
         navigationController!.pushViewController(sentMemeDetail, animated: true)
     }
-    
-    
-    
 
 }
