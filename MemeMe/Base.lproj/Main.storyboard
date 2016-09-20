@@ -16,18 +16,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemeTableCell" id="Vp3-U9-Zyp" customClass="SentMemeTableViewCell" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemeTableCell" rowHeight="100" id="Vp3-U9-Zyp" customClass="SentMemeTableViewCell" customModule="MemeMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vp3-U9-Zyp" id="oWK-Yo-BZg">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RD0-RP-iH9" userLabel="Sent Meme Table Image">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RD0-RP-iH9" userLabel="Sent Meme Table Image">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="43" id="xb1-YW-8R2"/>
+                                                <constraint firstAttribute="width" constant="100" id="xb1-YW-8R2"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMb-fs-m5K" userLabel="Sent Meme Table Text Top">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5p3-fn-JK6" userLabel="Sent Meme Table Text Bottom">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM8-Lg-tUQ">
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -35,18 +45,26 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="dM8-Lg-tUQ" firstAttribute="top" secondItem="oWK-Yo-BZg" secondAttribute="topMargin" constant="3" id="0QE-NZ-9FQ"/>
-                                        <constraint firstItem="dM8-Lg-tUQ" firstAttribute="leading" secondItem="RD0-RP-iH9" secondAttribute="trailing" constant="16" id="1LI-r4-hfY"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="dM8-Lg-tUQ" secondAttribute="bottom" constant="3" id="BVj-aO-iIT"/>
+                                        <constraint firstItem="dM8-Lg-tUQ" firstAttribute="top" secondItem="oWK-Yo-BZg" secondAttribute="topMargin" constant="5" id="0QE-NZ-9FQ"/>
+                                        <constraint firstItem="dM8-Lg-tUQ" firstAttribute="leading" secondItem="RD0-RP-iH9" secondAttribute="trailing" constant="8" id="1LI-r4-hfY"/>
+                                        <constraint firstItem="5p3-fn-JK6" firstAttribute="leading" secondItem="oWK-Yo-BZg" secondAttribute="leadingMargin" id="1fe-uG-9JP"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="dM8-Lg-tUQ" secondAttribute="bottom" id="BVj-aO-iIT"/>
                                         <constraint firstItem="RD0-RP-iH9" firstAttribute="top" secondItem="oWK-Yo-BZg" secondAttribute="top" id="DlM-BX-TOd"/>
+                                        <constraint firstItem="NMb-fs-m5K" firstAttribute="leading" secondItem="oWK-Yo-BZg" secondAttribute="leadingMargin" id="ICK-zj-XvF"/>
+                                        <constraint firstItem="dM8-Lg-tUQ" firstAttribute="leading" secondItem="NMb-fs-m5K" secondAttribute="trailing" constant="8" id="NRM-y6-X5H"/>
+                                        <constraint firstItem="5p3-fn-JK6" firstAttribute="bottom" secondItem="oWK-Yo-BZg" secondAttribute="bottomMargin" id="cw1-Ni-sBz"/>
                                         <constraint firstItem="dM8-Lg-tUQ" firstAttribute="trailing" secondItem="oWK-Yo-BZg" secondAttribute="trailingMargin" id="ds9-Uw-Ned"/>
+                                        <constraint firstItem="NMb-fs-m5K" firstAttribute="top" secondItem="oWK-Yo-BZg" secondAttribute="topMargin" constant="3" id="rnD-UU-5bv"/>
                                         <constraint firstItem="RD0-RP-iH9" firstAttribute="leading" secondItem="oWK-Yo-BZg" secondAttribute="leading" constant="8" id="tQz-V8-NCQ"/>
-                                        <constraint firstAttribute="bottom" secondItem="RD0-RP-iH9" secondAttribute="bottom" id="u6I-ol-gpb"/>
+                                        <constraint firstAttribute="bottom" secondItem="RD0-RP-iH9" secondAttribute="bottom" constant="-1" id="u6I-ol-gpb"/>
+                                        <constraint firstItem="dM8-Lg-tUQ" firstAttribute="leading" secondItem="5p3-fn-JK6" secondAttribute="trailing" constant="8" id="yak-2z-5y5"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="sentMemeTableImage" destination="RD0-RP-iH9" id="kiD-ag-GGq"/>
                                     <outlet property="sentMemeTableLabel" destination="dM8-Lg-tUQ" id="RMT-2R-rOA"/>
+                                    <outlet property="sentMemeTableTextBottom" destination="5p3-fn-JK6" id="unP-YL-sQt"/>
+                                    <outlet property="sentMemeTableTextTop" destination="NMb-fs-m5K" id="0AC-Ya-bQp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -234,7 +252,7 @@
         <scene sceneID="Hhf-70-8QC">
             <objects>
                 <collectionViewController id="IKC-Rg-eRK" customClass="SentMemeCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Rnu-mb-qMk">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Rnu-mb-qMk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

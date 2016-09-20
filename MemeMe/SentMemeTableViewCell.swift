@@ -11,7 +11,8 @@ import UIKit
 class SentMemeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var sentMemeTableImage: UIImageView!
-
+    @IBOutlet weak var sentMemeTableTextTop: UILabel!
+    @IBOutlet weak var sentMemeTableTextBottom: UILabel!
     @IBOutlet weak var sentMemeTableLabel: UILabel!
 
 
